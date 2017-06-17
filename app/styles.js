@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
   authorName: {
     alignSelf: 'center',
     marginLeft: 10,
+    fontWeight: 'bold',
   },
   feedBack: {
     padding: 12,

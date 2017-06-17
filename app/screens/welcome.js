@@ -31,10 +31,12 @@ class Welcome extends Component {
   };
 
   getLatestImages() {
+    if (this.state.isFirstPage) {
+      _postData = [];
+    }
     return fetch(latestImageEnpoint + this.state.currentPage)
     .then((response) => response.json()
     .then((responseJSON) => {
-      console.log(responseJSON);
       _postData = _postData.concat(responseJSON);
       this.setState({
         dataSource: this.state.dataSource.cloneWithRows(_postData),
